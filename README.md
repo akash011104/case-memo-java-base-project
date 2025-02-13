@@ -1,0 +1,1 @@
+# case-memo-java-base-project
