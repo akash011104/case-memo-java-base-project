@@ -1,0 +1,209 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: linear-gradient(#FFF, #ff2770);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+h2, h3 {
+    color: #343a40;
+    margin: 10px 0;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 5px;
+}
+
+/* Form Styles */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #495057;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px; /* Increased for better spacing */
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #dee2e6;
+    padding: 12px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Button Styles */
+button {
+    background-color: #0a2644;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    margin-top: 10px;
+    width: 100%;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #25cb3b;
+    transform: translateY(-1px);
+}
+
+/* Memo Output Styles */
+.memo-output {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+}
+
+/* Print Styles */
+@media print {
+    body * { visibility: hidden; }
+    .print-only, .print-only * { visibility: visible; }
+    .print-only { position: absolute; top: 0; left: 0; width: 100%; }
+}
+
+/* Memo Table Styles */
+.memo-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.memo-table, .memo-table th, .memo-table td {
+    border: 1px solid #dee2e6;
+    padding: 8px;
+}
+
+.memo-table th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    text-align: left;
+}
+
+.memo-table td {
+    background-color: #f9f9f9;
+}
+
+/* Styling for Headings in the Memo */
+.memo-output h2, .memo-output h3 {
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 5px;
+}
+
+/* History Section */
+.history-output {
+    margin-top: 30px;
+    padding: 20px;
+    border-top: 2px solid #007bff;
+    background-color: #f9f9f9;
+}
+
+.history-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.history-item h3 {
+    color: #333;
+}
+
+.history-item h4 {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.history-item ul {
+    padding-left: 20px;
+}
+
+/* Print Styles */
+@media print {
+    body, .container {
+        margin: 0;
+        padding: 0;
+    }
+
+    button, input, select {
+        display: none; /* Hide form elements when printing */
+    }
+
+    .memo-output {
+        width: 100%;
+        border: none;
+        padding: 0;
+    }
+
+    .memo-table {
+        width: 100%;
+        font-size: 14px;
+        border-collapse: collapse;
+    }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Memo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Riddhi Siddhi Hardware</h1>
+
+    <form id="transactionMemoForm">
+        <label>Customer Name: <input type="text" id="customerName" required></label>
+
+        <div class="date-phone-container">
+            <label>Phone Number: <input type="tel" id="phoneNumber" required></label>
+            <label>Date: <input type="date" id="date" required></label>
+        </div>
+
+        <h3>Product Details</h3>
+        <table id="productTable">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Unit</th>
+                    <th>Price (per unit)</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="products">
+                <tr>
+                    <td><input type="text" class="productName" required></td>
+                    <td><input type="number" class="quantity" min="1" required></td>
+                    <td>
+                        <select class="unit" required>
+                            <option value="pcs">Pieces (pcs)</option>
+                            <option value="kg">Kilogram (kg)</option>
+                            <option value="l">Liter (L)</option>
+                            <option value="g">Gram (g)</option>
+                            <option value="ml">Milliliter (mL)</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="price" min="0.01" step="0.01" required></td>
+                    <td><button type="button" class="cancel-button" onclick="removeProduct(this)">Cancel</button></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <button type="button" onclick="addProduct()">Add Product</button>
+
+        <div class="tax-container">
+            <label>CGST (%): <input type="number" id="cgst" min="0" step="0.01" required></label>
+            <label>SGST (%): <input type="number" id="sgst" min="0" step="0.01" required></label>
+        </div>
+
+        <button type="button" onclick="generateMemo()">Generate Memo</button>
+        <button type="button" onclick="printMemo()">Print Memo</button>
+    </form>
+
+    <div id="memoOutput" class="memo-output"></div>
+    <div id="memoOutput" class="memo-output"></div>
+
+
+<div id="historyOutput" class="history-output"></div>
+
+
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
